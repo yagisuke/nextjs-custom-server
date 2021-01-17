@@ -1,4 +1,5 @@
 import * as React from 'react'
+import H1 from '~client/components/elements/h1'
 
 type Props = {
   title: string
@@ -9,7 +10,7 @@ class Error extends React.Component<Props> {
   render() {
     return (
       <>
-        <h1>404</h1>
+        <H1>404</H1>
         <p>This is Error page.</p>
       </>
     )

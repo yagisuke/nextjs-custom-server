@@ -22,8 +22,8 @@
     "resolveJsonModule": true,
     "paths": {
       "~types/*": ["types/*"],
-      "~client/*": ["client/*"],
-      "~server/*": ["server/*"]
+      "~server/*": ["server/*"],
+      "~client/*": ["client/*"]
     }
   },
   "exclude": ["dist", ".next", "out", "next.config.js"],

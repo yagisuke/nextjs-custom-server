@@ -1,7 +1,7 @@
 import Express from 'express'
 import * as http from 'http'
 
-const PORT = 3001
+const PORT = 3000
 const HOST = '0.0.0.0'
 
 // Specifies the max length of the queue of pending connections

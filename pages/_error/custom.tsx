@@ -1,5 +1,6 @@
 import { NextPageContext } from 'next'
 import * as React from 'react'
+import H1 from '~client/components/elements/h1'
 
 type Props = {
   title: string
@@ -19,7 +20,7 @@ class Error extends React.Component<Props> {
   render() {
     return (
       <>
-        <h1>{this.props.title}</h1>
+        <H1>{this.props.title}</H1>
         <p>{this.props.message}</p>
       </>
     )
