@@ -1,5 +1,5 @@
 import Express from 'express'
-import NextServer from '../../types/next-server'
+import NextServer from '~types/next-server'
 import A from './a'
 import B from './b'
 import Route from './route'

@@ -1,7 +1,7 @@
 import * as Express from 'express'
 import { HttpError } from 'http-errors'
 import { parse } from 'url'
-import NextServer from '../types/next-server'
+import NextServer from '~types/next-server'
 
 export default (server: Express.Application, app: NextServer) => {
   server.use((_error: HttpError, req: Express.Request, res: Express.Response, _next: Express.NextFunction) => {
