@@ -13,6 +13,11 @@ export default function Home() {
           <a>b</a>
         </Link>
       </li>
+      <li>
+        <Link href="/redux" as="/redux">
+          <a>redux</a>
+        </Link>
+      </li>
     </ul>
   )
 }
