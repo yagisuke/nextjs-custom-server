@@ -1,11 +1,11 @@
 import Express from 'express'
 import NextServer from '~types/next-server'
-import A from './a'
-import B from './b'
+import Image from './image'
 import Route from './route'
+import Simple from './simple'
 
 export default (server: Express.Application, app: NextServer) => {
-  A(server)
-  B(server, app)
+  Image(server)
   Route(server, app)
+  Simple(server, app)
 }
