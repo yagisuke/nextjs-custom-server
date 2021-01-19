@@ -1,19 +1,11 @@
 import { NextPageContext } from 'next'
-import * as React from 'react'
+import React from 'react'
 import H1 from '~client/components/elements/h1'
-
-// ______________________________________________________
-//
-// @ Types
 
 type Props = {
   title: string
   ids: string[]
 }
-
-// ______________________________________________________
-//
-// @ exports
 
 class Page extends React.Component<Props> {
   static getInitialProps({ query }: NextPageContext) {

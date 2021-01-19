@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import H1 from '~client/components/elements/h1'
 
 type Props = {
