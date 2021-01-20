@@ -11,6 +11,6 @@ export default (app: Express.Application) => {
   const server = http.createServer(app)
 
   server.listen(PORT, HOST, BACKLOG, function() {
-    console.log(`Fuji is started! Running on http://${HOST}:${PORT}`)
+    console.log(`Running on http://${HOST}:${PORT}`)
   })
 }
