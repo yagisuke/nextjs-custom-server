@@ -16,13 +16,4 @@ export class UserAgentModel extends Record(state({})) {
     return this.set('remote_ip', src.remote_ip)
       .set('source', src.source)
   }
-
-  isApple(): boolean {
-    const source = this.get('source').toLocaleLowerCase()
-    return !!(
-      source.match('iphone') ||
-      source.match('ipad') ||
-      source.match('macintosh')
-    )
-  }
 }

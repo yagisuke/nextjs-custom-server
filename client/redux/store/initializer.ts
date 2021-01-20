@@ -1,8 +1,5 @@
 import * as Express from 'express'
 import { AppStore } from '~client/redux/store'
-// ______________________________________________________
-//
-// @ Injector
 
 export function injectInitialStateToStore(
   req: Express.Request,

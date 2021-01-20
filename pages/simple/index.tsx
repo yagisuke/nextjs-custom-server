@@ -1,3 +1,3 @@
-export default function B() {
-  return <div>b</div>
+export default function Simple() {
+  return <div>simple</div>
 }
