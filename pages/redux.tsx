@@ -1,29 +1,25 @@
-import React, { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import { NextPage } from 'next'
-import { END } from 'redux-saga'
-import { loadData, startClock, tickClock } from '~client/redux/actions'
-import Page from '~client/components/views/redux'
-import { wrapper } from '~client/redux/store'
+import React from 'react'
+import H1 from '~client/components/elements/h1'
+import View from '~client/components/views/redux'
 
-const Index: NextPage = () => {
-  const dispatch = useDispatch()
-
-  useEffect(() => {
-    dispatch(startClock())
-  })
-
-  return <Page title="Index Page" linkTo="/other" NavigateTo="Other Page" />
+type Props = {
+  title: string
 }
 
-export const getStaticProps = wrapper.getStaticProps(async ({ store }) => {
-  store.dispatch(tickClock(false))
-
-  if (!store.getState().placeholderData) {
-    store.dispatch(loadData())
-    store.dispatch(END)
+class Page extends React.Component<Props> {
+  static getInitialProps() {
+    return {
+        title: 'redux'
+    }
   }
-  await store.sagaTask?.toPromise()
-})
+  render() {
+    return (
+      <>
+        <H1>{this.props.title}</H1>
+        <View />
+      </>
+    )
+  }
+}
 
-export default Index
+export default Page

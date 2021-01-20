@@ -1,4 +1,4 @@
-import { NextPageContext } from 'next'
+import { PageContext } from 'next'
 import React from 'react'
 import H1 from '~client/components/elements/h1'
 
@@ -8,7 +8,7 @@ type Props = {
 }
 
 class Error extends React.Component<Props> {
-  static getInitialProps(ctx: NextPageContext) {
+  static getInitialProps(ctx: PageContext) {
     const { res, err, query } = ctx
     const title = (res && res.statusCode) || (err && err.statusCode) || 'This is Error page.'
     const message = query && query.message || 'hello'

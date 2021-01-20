@@ -1,4 +1,4 @@
-import { NextPageContext } from 'next'
+import { PageContext } from 'next'
 import React from 'react'
 import H1 from '~client/components/elements/h1'
 
@@ -8,10 +8,10 @@ type Props = {
 }
 
 class Page extends React.Component<Props> {
-  static getInitialProps({ query }: NextPageContext) {
+  static getInitialProps({ query }: PageContext) {
     return {
-        title: query.type,
-        types: query.types
+      title: query.type,
+      types: query.types
     }
   }
 

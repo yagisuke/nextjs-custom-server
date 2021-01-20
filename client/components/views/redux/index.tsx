@@ -1,47 +1,37 @@
 import React from 'react'
-import Link from 'next/link'
-import { useSelector } from 'react-redux'
-import { createSelector } from 'reselect'
+import styled from 'styled-components'
+import { connect } from 'react-redux'
+import { AppStoreState } from '~client/redux/store'
 
-import { AppState } from '~client/redux/interfaces'
-import Counter from './counter'
-import Clock from './clock'
+type ContainerProps = {}
 
-interface PageProps {
-  linkTo: string
-  NavigateTo: string
-  title: string
-}
+type Props = {
+  className?: string
+  userAgent: string
+} & ContainerProps
 
-const selectData = createSelector(
-  (state: AppState) => state.error,
-  (state: AppState) => state.lastUpdate,
-  (state: AppState) => state.light,
-  (state: AppState) => state.placeholderData,
-  (error, lastUpdate, light, placeholderData) => ({ error, lastUpdate, light, placeholderData }),
-)
+// ______________________________________________________
+//
+// @ View
 
-const Page: React.FC<PageProps> = ({ linkTo, NavigateTo, title }: PageProps) => {
-  const { error, lastUpdate, light, placeholderData } = useSelector(selectData)
-
+const View: React.FC<Props> = props => {
   return (
-    <div>
-      <h1>{title}</h1>
-      <Clock lastUpdate={lastUpdate} light={light} />
-      <Counter />
-      <nav>
-        <Link href={linkTo}>
-          <a>Navigate: {NavigateTo}</a>
-        </Link>
-      </nav>
-      {placeholderData && (
-        <pre>
-          <code>{JSON.stringify(placeholderData, null, 2)}</code>
-        </pre>
-      )}
-      {error && <p style={{ color: 'red' }}>Error: {error.message}</p>}
+    <div className={props.className}>
+      <p className="ua">{props.userAgent}</p>
     </div>
   )
 }
 
-export default Page
+const StyledView = styled(View)`
+  .ua {
+    color: blue;
+    font-size: 20px;
+  }
+`
+
+export default connect(
+  ({ userAgent }: AppStoreState, props: ContainerProps) => ({
+    ...props,
+    userAgent: userAgent.source
+  })
+)(StyledView)
